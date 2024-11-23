@@ -1,123 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coder inventor</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000000;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #ffffff;
-            text-align: center;
+            min-height: 100vh;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: rgba(27, 27, 27, 0.8);
+            backdrop-filter: blur(10px);
             padding: 20px;
-            background-color: #1b1b1b;
-            color: #ffffff;
-        }
-
-        .header-text {
-            font-size: 20px;
             text-align: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
-        img {
-            max-width: 50px;
-            height: auto;
+        header img {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-        }
-
-        button {
-            font-size: 30px;
-            border: none;
-            background: none;
-            cursor: pointer;
-            color: #ffffff;
+            border: 3px solid #48cae4;
+            margin-bottom: 10px;
             transition: transform 0.3s ease;
         }
 
-        button:hover {
+        header img:hover {
             transform: scale(1.1);
         }
 
+        .header-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #48cae4;
+        }
+
+        nav {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         nav ul {
-            list-style-type: none;
-            margin: 5px 0 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             padding: 0;
-            display: none;
-            direction: rtl;
-            text-align: right;
+            list-style: none;
+            margin: 0;
         }
 
         nav ul li {
-            margin-bottom: 5px;
-            padding-left: 10px;
-            background: linear-gradient(90deg, rgba(51,51,51,0) 0%, rgba(51,51,51,0.8) 100%);
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
+            background: rgba(27, 27, 27, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(72, 202, 228, 0.2);
         }
 
-        nav ul li:first-child {
-            margin-top: 10px;
+        nav ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            color: #48cae4;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .card-description {
+            font-size: 0.9em;
+            color: #ffffff;
+            margin-bottom: 15px;
+            flex-grow: 1;
         }
 
         nav ul li a {
+            display: inline-block;
+            background: linear-gradient(45deg, #00b4d8, #48cae4);
+            color: white;
             text-decoration: none;
-            color: #ffffff;
-            display: block;
-            padding: 5px 10px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-align: center;
         }
 
         nav ul li a:hover {
-            color: #e6e6e6;
-            background-color: rgba(51,51,51,0.6);
+            background: linear-gradient(45deg, #48cae4, #00b4d8);
             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(72, 202, 228, 0.4);
         }
 
-        .direction-ltr {
-            direction: ltr;
-            text-align: right;
-            margin: 0 10px;
-        }
-
-        .section-heading {
-            font-weight: bold;
-            text-align: right;
-        }
-
-        .section-divider {
-            border-bottom: 1px solid #ffffff;
-            margin: 20px auto;
-            width: 50%;
-            text-align: right;
-        }
-
-        .bold-text {
-            font-weight: bold;
-            text-align: right;
-        }
-
-        .blue-link {
-            color: #3e7cb1;
-            text-decoration: none;
-        }
-
-        .blue-link:hover {
-            text-decoration: underline;
-        }
-
-        .line-break {
-            white-space: pre;
-        }
-        .salam{
-           text-align: center;8
+        @media (max-width: 768px) {
+            nav ul {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -125,42 +115,90 @@
     <header>
         <img src="https://i.postimg.cc/kGjHPBmr/e28b2ce5135ccfd4419152b08283505f.jpg" alt="avatar">
         <div class="header-text">coder inventor</div>
-        <button id="toggleButton">𝌆</button>
     </header>
     <nav>
         <ul>
-            <li><a href="https://coderinventor.github.io/social/">الصفحة الرئيسية (صفحات التواصل الاجتماعي)</a></li>
-            <li><a     href="https://coderinventor.github.io/youtube">يوطيوب</a></li>
-            <li><a href="https://coderinventor.github.io/hybarala/">مترجم</a></li>
-            <li><a href="https://coderinventor.github.io/age-calculator/">حاسبة العمر</a></li>
-            <li><a href="https://coderinventor.github.io/calculator/">حاسبة رياضيات</a></li>
-            <li><a href="https://coderinventor.github.io/IQ-test-game/">لعبة اختبار الذكاء</a></li>
-            <li><a href="https://coderinventor.github.io/password-creator/">صانع كلمات المرور</a></li>
-            <li><a href="https://coderinventor.github.io/discord-webhook/">ارسال رسائل عبر الويب هوك</a></li>
-            <li><a href="https://coderinventor.github.io/discord-webhook-V2/">ارسال رسائل عبر الويب هوك V2</a></li>
-            <li><a href="https://coderinventor.github.io/hide-text-discord/">اخفاء الرسائل بالديسكورد</a></li>
-            <li><a href="https://coderinventor.github.io/colorbox">تحميل صورة اللون</a></li>
-            <li><a href="https://coderinventor.github.io/tashfir">شفر كلامك</a></li>
-            <li><a href="https://coderinventor.github.io/no-dots/">ازالة النقاط</a></li>
-            <li><a href="https://coderinventor.github.io/ar2enkeyboard/">مترجم الكيبورد</a></li>
-            <li><a href="https://coderinventor.github.io/armorse/">مترجم مورس العربي</a></li>
-            <li><a href="#">✨المزيد قريبا✨</a></li>
+            <li>
+                <div class="card-title">الصفحة الرئيسية</div>
+                <div class="card-description">صفحات التواصل الاجتماعي والروابط الخاصة بي</div>
+                <a href="https://coderinventor.github.io/social/">فتح الصفحة</a>
+            </li>
+            <li>
+                <div class="card-title">يوتيوب</div>
+                <div class="card-description">تابع قناتي على يوتيوب للمزيد من المحتوى المفيد</div>
+                <a href="https://coderinventor.github.io/youtube">مشاهدة القناة</a>
+            </li>
+            <li>
+                <div class="card-title">مترجم</div>
+                <div class="card-description">أداة ترجمة متطورة لترجمة النصوص بين مختلف اللغات</div>
+                <a href="https://coderinventor.github.io/hybarala/">استخدام المترجم</a>
+            </li>
+            <li>
+                <div class="card-title">حاسبة العمر</div>
+                <div class="card-description">احسب عمرك بدقة وتعرف على تفاصيل أيامك</div>
+                <a href="https://coderinventor.github.io/age-calculator/">حساب العمر</a>
+            </li>
+            <li>
+                <div class="card-title">حاسبة رياضيات</div>
+                <div class="card-description">حاسبة متطورة لإجراء العمليات الحسابية بسهولة</div>
+                <a href="https://coderinventor.github.io/calculator/">حساب</a>
+            </li>
+            <li>
+                <div class="card-title">لعبة اختبار الذكاء</div>
+                <div class="card-description">اختبر مستوى ذكائك من خلال مجموعة من الألغاز المثيرة</div>
+                <a href="https://coderinventor.github.io/IQ-test-game/">بدء اللعب</a>
+            </li>
+            <li>
+                <div class="card-title">صانع كلمات المرور</div>
+                <div class="card-description">أنشئ كلمات مرور قوية وآمنة بسهولة</div>
+                <a href="https://coderinventor.github.io/password-creator/">إنشاء كلمة مرور</a>
+            </li>
+            <li>
+                <div class="card-title">ويب هوك ديسكورد</div>
+                <div class="card-description">أداة لإرسال رسائل عبر ويب هوك ديسكورد</div>
+                <a href="https://coderinventor.github.io/discord-webhook/">إرسال رسالة</a>
+            </li>
+            <li>
+                <div class="card-title">ويب هوك ديسكورد V2</div>
+                <div class="card-description">النسخة المحسنة من أداة إرسال رسائل الويب هوك</div>
+                <a href="https://coderinventor.github.io/discord-webhook-V2/">استخدام الأداة</a>
+            </li>
+            <li>
+                <div class="card-title">إخفاء النص في ديسكورد</div>
+                <div class="card-description">أداة لإخفاء الرسائل النصية في ديسكورد</div>
+                <a href="https://coderinventor.github.io/hide-text-discord/">إخفاء النص</a>
+            </li>
+            <li>
+                <div class="card-title">تحميل صورة اللون</div>
+                <div class="card-description">أداة لتحميل صور بألوان مخصصة</div>
+                <a href="https://coderinventor.github.io/colorbox">تحميل صورة</a>
+            </li>
+            <li>
+                <div class="card-title">تشفير النصوص</div>
+                <div class="card-description">قم بتشفير نصوصك بطريقة آمنة</div>
+                <a href="https://coderinventor.github.io/tashfir">تشفير النص</a>
+            </li>
+            <li>
+                <div class="card-title">إزالة النقاط</div>
+                <div class="card-description">أداة لإزالة النقاط من النصوص</div>
+                <a href="https://coderinventor.github.io/no-dots/">إزالة النقاط</a>
+            </li>
+            <li>
+                <div class="card-title">مترجم الكيبورد</div>
+                <div class="card-description">حول النصوص بين لوحات المفاتيح العربية والإنجليزية</div>
+                <a href="https://coderinventor.github.io/ar2enkeyboard/">ترجمة النص</a>
+            </li>
+            <li>
+                <div class="card-title">مترجم مورس العربي</div>
+                <div class="card-description">حول النصوص العربية إلى شفرة مورس والعكس</div>
+                <a href="https://coderinventor.github.io/armorse/">ترجمة مورس</a>
+            </li>
+            <li>
+                <div class="card-title">المزيد قريباً</div>
+                <div class="card-description">ترقبوا المزيد من الأدوات والمميزات القادمة</div>
+                <a href="#" style="background: linear-gradient(45deg, #ffd700, #ffa500);">✨ قريباً ✨</a>
+            </li>
         </ul>
     </nav>
-    <div class="direction-ltr">
-        <p class="bold-text">:روابط المواقع</p>
-        <p>إذا كنت ترغب في متابعتي على جميع تطبيقات التواصل الاجتماعي أو مشاهدة جميع المواقع التي صنعتها، يمكنك النقر على الأشرطة الثلاث الموجودة فوق (<span style="font-size: 30px;">𝌆</span>)</p>
-    </div>
-    <script>
-        document.getElementById('toggleButton').addEventListener('click', function() {
-            var navLinks = document.querySelector('nav ul');
-            if (navLinks.style.display === 'none') {
-                navLinks.style.display = 'block';
-            } else {
-                navLinks.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
-
